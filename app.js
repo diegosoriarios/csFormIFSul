@@ -19,10 +19,9 @@ app.get('/', function(req, res) {
 });
 
 app.get('/teams', (req, res) => {
-	Team.find({ }).exec().then(res => {
-		console.log(res)
+	Team.find({ }).exec().then(response => {
+		res.send(response)
 	})
-	res.send("Hello")
 })
 
 app.post('/player', (req, res) => {
@@ -39,11 +38,8 @@ app.post('/player', (req, res) => {
 				if (resp.length !== 0) {
 					console.log('res', resp[0].players)
 					if (resp[0].players.length < 5) {
-						let auxArray = resp[0].players
-						auxArray.push(req.body.name)
-						console.log('auxArray', auxArray)
 						// Não está adicionando no array de players
-						Team.updateOne({ name: req.body.team }, { $set: {players:  auxArray} })
+						Team.updateOne({ name: req.body.team }, { name: req.body.team, $push: { players:  req.body.name} }).exec()
 						//
 						p.save().then(() => console.log(p))
 					} else {

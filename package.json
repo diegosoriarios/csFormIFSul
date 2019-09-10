@@ -1,0 +1,16 @@
+{
+  "name": "cs-go",
+  "version": "1.0.0",
+  "description": "cs-go form for ifsul championship",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "paulocesarcit",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": ""
+  }
+}

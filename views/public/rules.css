@@ -1,0 +1,17 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url(images/rules-cs-go-background.jpg) no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container {
+    margin-top: 20%;
+}
+
+p {
+    color: white;
+    text-align: center;
+}

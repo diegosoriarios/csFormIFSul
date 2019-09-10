@@ -1,0 +1,16 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url(images/error-cs-go-background.jpg) no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.mid {
+    margin-top: 20%;
+}

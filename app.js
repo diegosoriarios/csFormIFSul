@@ -8,6 +8,9 @@ const app = express()
 const mongoose = require('mongoose')
 mongoose.connect('mongodb+srv://admin:cszao0101@cluster0-llrk5.mongodb.net/test?retryWrites=true&w=majority&keepAlive=true&poolSize=30&autoReconnect=true&socketTimeoutMS=360000&connectTimeoutMS=360000', {useNewUrlParser: true,  useUnifiedTopology: true });
 
+//LOCALHOST
+//mongoose.connect('mongodb://127.0.0.1/cs', {useNewUrlParser: true,  useUnifiedTopology: true })
+
 //MODEL
 const Player = mongoose.model('Player', { name: String, team: String })
 const Team = mongoose.model('Team', { name: String, players: Array })
@@ -21,7 +24,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/teams', (req, res) => {
-	Team.find({ }).exec().then(response => {
+	Team.find().exec().then(response => {
 		res.send(response)
 	})
 })

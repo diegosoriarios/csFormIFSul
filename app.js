@@ -14,6 +14,8 @@ const Team = mongoose.model('Team', { name: String, players: Array })
 
 app.use(bodyParser.json())
 
+app.use(express.static(__dirname + '/views'));
+
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/views/home.html'));
 });

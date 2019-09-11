@@ -29,11 +29,11 @@ app.get('/teams', (req, res) => {
 app.post('/player', (req, res) => {
 	console.log(req.body)
 
-	Player.find({ name: req.body.name }).exec().then(response => {
+	Player.find({ name: req.body.nickname }).exec().then(response => {
 		if(response.length !== 0) {
 			console.log("Player já existe")
 		} else {
-			const p = new Player({ name: req.body.name, team: req.body.team });
+			const p = new Player({ name: req.body.nickname, team: req.body.team });
 
 			Team.find({ name: req.body.team }).exec().then(resp => {
 				console.log('resp', resp)
@@ -41,14 +41,14 @@ app.post('/player', (req, res) => {
 					console.log('res', resp[0].players)
 					if (resp[0].players.length < 5) {
 						// Não está adicionando no array de players
-						Team.updateOne({ name: req.body.team }, { name: req.body.team, $push: { players:  req.body.name} }).exec()
+						Team.updateOne({ name: req.body.team }, { name: req.body.team, $push: { players:  req.body.nickname} }).exec()
 						//
 						p.save().then(() => console.log(p))
 					} else {
 						console.log("Time está completo")
 					}
 				} else {
-					let auxArray = [req.body.name]
+					let auxArray = [req.body.nickname]
 					const t = new Team({ name: req.body.team, players: auxArray })
 					t.save().then(() => console.log(t));
 					p.save().then(() => console.log(p));

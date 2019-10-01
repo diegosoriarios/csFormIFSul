@@ -4,9 +4,14 @@ csgoform.addEventListener('submit', function(e) {
   e.preventDefault();
 
   const formData = new FormData(this);
-  fetch('/player', {
-    method: 'post',
-    body: formData
+  console.log("FORMDATA=>"+formData.get("nickname")+" | "+formData.get("team"));
+  fetch('http://localhost:3000/player', {
+    headers : { "content-type" : "application/json; charset=UTF-8"},
+    method: "POST",
+    body: {
+      "nickname": formData.get("nickname"),
+      "team": formData.get("team")
+    }
   }).then(function(response) {
     return response.text();
   }).then(function(text) {

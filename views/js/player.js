@@ -8,10 +8,10 @@ csgoform.addEventListener('submit', function(e) {
   fetch('http://localhost:3000/player', {
     headers : { "content-type" : "application/json; charset=UTF-8"},
     method: "POST",
-    body: {
+    body: JSON.stringify({
       "nickname": formData.get("nickname"),
       "team": formData.get("team")
-    }
+    })
   }).then(function(response) {
     return response.text();
   }).then(function(text) {

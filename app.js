@@ -23,6 +23,14 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/views/home.html'));
 });
 
+app.get('/success', function(req, res) {
+    res.sendFile(path.join(__dirname + '/views/success.html'));
+});
+
+app.get('/error', function(req, res) {
+    res.sendFile(path.join(__dirname + '/views/error.html'));
+});
+
 app.get('/teams', (req, res) => {
 	Team.find().exec().then(response => {
 		res.send(response)
@@ -35,6 +43,7 @@ app.post('/player', (req, res) => {
 	Player.find({ name: req.body.nickname }).exec().then(response => {
 		if(response.length !== 0) {
 			console.log("Player já existe")
+			res.redirect('/error')
 		} else {
 			const p = new Player({ name: req.body.nickname, team: req.body.team });
 
@@ -47,21 +56,22 @@ app.post('/player', (req, res) => {
 						Team.updateOne({ name: req.body.team }, { name: req.body.team, $push: { players:  req.body.nickname} }).exec()
 						//
 						p.save().then(() => console.log(p))
+						res.redirect('/success')
 					} else {
 						console.log("Time está completo")
+						res.redirect('/error')
 					}
 				} else {
 					let auxArray = [req.body.nickname]
 					const t = new Team({ name: req.body.team, players: auxArray })
 					t.save().then(() => console.log(t));
 					p.save().then(() => console.log(p));
+					res.redirect('/success')
 				}
 				
 			})
 		}
 	})
-	
-	res.sendStatus(200)
 })
 
 app.listen(3000, () => {

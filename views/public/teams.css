@@ -8,11 +8,12 @@ body {
 }
 
 .container {
-    margin-top: 20%;
-    align-content: center;
+    margin-top: 60vh;
+    text-align: center;
 }
 
 .list-group {
     width: 50%;
+    margin: 0 auto;
     text-align: center;
 }

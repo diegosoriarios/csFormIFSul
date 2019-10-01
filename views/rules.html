@@ -3,24 +3,99 @@
 
 <head>
     <title>IFSUL CS-GO</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" >
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="public/rules.css" rel="stylesheet" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="public/rules.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
-        <p>
-            <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseRules" aria-expanded="false" aria-controls="collapseRules">Rule 1</button>
-            <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseRules" aria-expanded="false" aria-controls="collapseRules">Rule 2</button>
-            <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseRules" aria-expanded="false" aria-controls="collapseRules">Rule 3</button>
-        </p>
-        <div class="collapse" id="collapseRules">
-            <div class="card card-body">
-                RULES HERE RULES HERE RULES HERE RULES HERE RULES HERE RULES HERE RULES HERE RULES HERE RULES HERE RULES HERE RULES HERE RULES HERE RULES HERE RULES HERE RULES HERE RULES HERE.
+        <div class="row">
+            <div class="col-md">
+                <button class="btn btn-success btn-block" tydiv="button" data-toggle="collapse" data-target="#multiCollapseRule1"
+                    aria-expanded="true" aria-controls="multiCollapseRule1">Map Pool</button>
+                <div class="collapse multi-collapse" id="multiCollapseRule1">
+                    <div class="card card-body">
+                        <h5 class="card-title"><b>Map Pool</b></h5>
+                        <p class="card-text">VERTIGO<br />CACHE<br />NUKE<br />DUST 2<br />MIRAGE</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#multiCollapseRule2"
+                    aria-expanded="true" aria-controls="multiCollapseRule2">Trapaça</button>
+                <div class="collapse multi-collapse" id="multiCollapseRule2">
+                    <div class="card card-body">
+                        <h5 class="card-title"><b>Trapaça</b></h5>
+                        <p class="card-text text-left">O uso de qualquer programa que ofereça vantagem ao jogador, o
+                            desclassificará automáticamente.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#multiCollapseRule3"
+                    aria-expanded="true" aria-controls="multiCollapseRule3">Times</button>
+                <div class="collapse multi-collapse" id="multiCollapseRule3">
+                    <div class="card card-body">
+                        <h5 class="card-title"><b>Times</b></h5>
+                        <p class="card-text text-left">Não haverá possibilidade de trocas após o cadastro, times sem os 5
+                            jogadores presentes serão automaticamente desclassificados.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#multiCollapseRule4"
+                    aria-expanded="true" aria-controls="multiCollapseRule4">Periféricos</button>
+                <div class="collapse multi-collapse" id="multiCollapseRule4">
+                    <div class="card card-body">
+                        <h5 class="card-title"><b>Periféricos</b></h5>
+                        <p class="card-text text-left">Poderão ser usados periféricos pessoais, porém o Computador utilizado será
+                            disponibilizado pelo IFSul.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#multiCollapseRule5"
+                    aria-expanded="true" aria-controls="multiCollapseRule5">Formato</button>
+                <div class="collapse multi-collapse" id="multiCollapseRule5">
+                    <div class="card card-body">
+                        <h5 class="card-title "><b>Formato</b></h5>
+                        <p class="card-text text-left">O Formato será dado por MD1, em formato de Eliminação Única (Mata-mata).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+
             </div>
         </div>
     </div>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 
 </html>

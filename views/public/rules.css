@@ -8,10 +8,19 @@ body {
 }
 
 .container {
-    margin-top: 20%;
+    margin-top: 35vh;
 }
 
-p {
-    color: white;
+.col-md{
     text-align: center;
+}
+
+.card-text {
+    color: black;
+}
+
+@media(max-width:40em){
+    .container{
+        margin-top:50vh;
+    }
 }

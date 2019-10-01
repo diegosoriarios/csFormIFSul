@@ -8,10 +8,25 @@ body {
 }
 
 .container {
-    margin-top: 20%;
+    margin-top: 25vh;
 }
+form input{
 
-p {
+}
+.container h1 {
     color: white;
+    font-size: 4rem;
+    text-shadow: .1rem .1rem .1rem black;
+    font-weight: bold;
+    margin-bottom:10vh;
+    width: 100%;
     text-align: center;
 }
+
+@media(max-width:40em){
+    .container h1{
+        font-size: 2rem;
+        margin-bottom:5vh;
+    }
+}
+

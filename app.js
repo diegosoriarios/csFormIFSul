@@ -43,7 +43,7 @@ app.post('/player', (req, res) => {
 	Player.find({ name: req.body.nickname }).exec().then(response => {
 		if(response.length !== 0) {
 			console.log("Player já existe")
-			res.redirect('/error')
+			return res.send('/error')
 		} else {
 			const p = new Player({ name: req.body.nickname, team: req.body.team });
 
@@ -56,17 +56,17 @@ app.post('/player', (req, res) => {
 						Team.updateOne({ name: req.body.team }, { name: req.body.team, $push: { players:  req.body.nickname} }).exec()
 						//
 						p.save().then(() => console.log(p))
-						res.redirect('/success')
+						return res.send('/success')
 					} else {
 						console.log("Time está completo")
-						res.redirect('/error')
+						return res.send('/error')
 					}
 				} else {
 					let auxArray = [req.body.nickname]
 					const t = new Team({ name: req.body.team, players: auxArray })
 					t.save().then(() => console.log(t));
 					p.save().then(() => console.log(p));
-					res.redirect('/success')
+					return res.send('success')
 				}
 				
 			})

@@ -16,6 +16,7 @@ csgoform.addEventListener('submit', function(e) {
     return response.text();
   }).then(function(text) {
     console.log(text);
+    window.location.replace(text);
   }).catch(function(error) {
     console.error(error);
   })

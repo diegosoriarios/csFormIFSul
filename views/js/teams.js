@@ -2,7 +2,7 @@ const teamList = document.getElementById("team-list")
 let newLink
 
 window.onload = () => {
-    fetch('http://localhost:3000/teams')
+    fetch(process.env.PORT + '/teams')
         .then(response => {
             return response.json()
         })

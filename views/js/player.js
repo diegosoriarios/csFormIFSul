@@ -5,7 +5,7 @@ csgoform.addEventListener('submit', function(e) {
 
   const formData = new FormData(this);
   console.log("FORMDATA=>"+formData.get("nickname")+" | "+formData.get("team"));
-  fetch('http://localhost:3000/player', {
+  fetch(process.env.PORT + '/player', {
     headers : { "content-type" : "application/json; charset=UTF-8"},
     method: "POST",
     body: JSON.stringify({

@@ -1,8 +1,9 @@
 const teamList = document.getElementById("team-list")
 let newLink
+const PORT = process.env.PORT || 3000;
 
 window.onload = () => {
-    fetch(process.env.PORT + '/teams')
+    fetch(PORT + '/teams')
         .then(response => {
             return response.json()
         })

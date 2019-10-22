@@ -1,6 +1,7 @@
 const teamList = document.getElementById("team-list")
 let newLink
-const PORT = process.env.PORT || 3000;
+//const PORT = process.env.PORT || 3000;
+const PORT = 'https://cs-ifsul.herokuapp.com'
 
 window.onload = () => {
     fetch(PORT + '/teams')

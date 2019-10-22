@@ -6,7 +6,7 @@ csgoform.addEventListener('submit', function(e) {
   e.preventDefault();
 
   const formData = new FormData(this);
-  console.log("FORMDATA=>"+formData.get("nickname")+" | "+formData.get("team"));
+  //console.log("FORMDATA=>"+formData.get("nickname")+" | "+formData.get("team"));
   
   
   fetch(PORT + '/player', {
@@ -19,7 +19,7 @@ csgoform.addEventListener('submit', function(e) {
   }).then(function(response) {
     return response.text();
   }).then(function(text) {
-    console.log(text);
+    //console.log(text);
     window.location.replace(text);
   }).catch(function(error) {
     console.error(error);

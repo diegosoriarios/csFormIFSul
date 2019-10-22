@@ -32,8 +32,12 @@ app.get('/error', function(req, res) {
 });
 
 app.get('/teams', (req, res) => {
-	Team.find().exec().then(response => {
-		res.send(response)
+	res.sendFile(path.join(__dirname + '/views/teams.html'))
+})
+
+app.get('/returnTeams', (req, res) => {
+	Team.find().exec().then(response => {	
+		return res.send(response)
 	})
 })
 

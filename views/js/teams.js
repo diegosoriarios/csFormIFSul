@@ -1,8 +1,8 @@
 const teamList = document.getElementById("team-list")
-let newLink
+let newPlayer
 //const PORT = process.env.PORT || 3000;
-const PORT = 'https://cs-ifsul.herokuapp.com'
-//const PORT = 'http://localhost:3000'
+//const PORT = 'https://cs-ifsul.herokuapp.com'
+const PORT = 'http://localhost:3000'
 
 window.onload = () => {
     fetch(PORT + '/returnTeams')
@@ -11,14 +11,23 @@ window.onload = () => {
         })
         .then(data => {
             //console.log(data)
+            let newLink = document.getElementById("team-list")
+            let teamName = document.getElementById("dropdownMenuButton")
+            let teamItems = document.getElementById('dropdown-div')
             data.forEach(item => {
-                newLink = document.createElement('a')
-                newLink.href = "#"
-                newLink.innerText = item.players
-                newLink.className = "list-group-item list-group-item-action"
+                console.log(item)
+                newPlayer = document.createElement('a')
+                newPlayer.href = "#"
+                newPlayer.innerText = item.players
+                newPlayer.className = "dropdown-item"
+                teamName.innerHTML = item.name
                 
-                const teamList = document.getElementById("team-list")
-                teamList.appendChild(newLink)    
+                teamItems.appendChild(newPlayer)
+
+                newLink.appendChild(teamName)
+                
+                //const teamList = document.getElementById("team-list")
+                //teamList.appendChild(newLink)    
             })
         })
 }

@@ -1,7 +1,7 @@
 const csgoform = document.getElementById("csgoform");
 //const PORT = process.env.PORT || 3000;
-//const PORT = 'https://cs-ifsul.herokuapp.com'
-const PORT = 'http://localhost:3000'
+const PORT = 'https://cs-ifsul.herokuapp.com'
+//const PORT = 'http://localhost:3000'
 
 csgoform.addEventListener('submit', function(e) {
   e.preventDefault();

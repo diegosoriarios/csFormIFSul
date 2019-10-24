@@ -1,8 +1,8 @@
 const teamList = document.getElementById("team-list")
 let newPlayer
 //const PORT = process.env.PORT || 3000;
-//const PORT = 'https://cs-ifsul.herokuapp.com'
-const PORT = 'http://localhost:3000'
+const PORT = 'https://cs-ifsul.herokuapp.com'
+//const PORT = 'http://localhost:3000'
 
 window.onload = () => {
     fetch(PORT + '/returnTeams')
